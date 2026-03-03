@@ -15,7 +15,7 @@
   <link rel="apple-touch-icon" href="assets/images/logo.png">
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@600;700;800&family=Playfair+Display:wght@700;800&display=swap"
     rel="stylesheet">
   <style>
     :root {
@@ -27,6 +27,8 @@
       --w: #fff;
       --g: #6b7280;
       --d: #1a1a2e;
+      --ff-h: 'Outfit', sans-serif;
+      --ff-b: 'Inter', sans-serif;
       --gr: linear-gradient(135deg, #0F5132 0%, #0a3622 60%, #0F5132 100%)
     }
 
@@ -37,9 +39,10 @@
     }
 
     body {
-      font-family: 'Poppins', sans-serif;
+      font-family: var(--ff-b);
       color: var(--d);
-      overflow-x: hidden
+      overflow-x: hidden;
+      line-height: 1.6
     }
 
     /* TICKER */
@@ -109,16 +112,17 @@
     }
 
     .lt {
-      font-family: 'Playfair Display', serif;
+      font-family: var(--ff-h);
       font-size: 21px;
       font-weight: 800;
       color: var(--p);
-      line-height: 1.1
+      line-height: 1.1;
+      letter-spacing: -0.5px;
     }
 
     .lt small {
       display: block;
-      font-family: 'Poppins', sans-serif;
+      font-family: var(--ff-b);
       font-size: 10px;
       font-weight: 500;
       color: var(--g);
@@ -212,11 +216,12 @@
     }
 
     .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 50px;
-      line-height: 1.15;
+      font-family: var(--ff-h);
+      font-size: 56px;
+      line-height: 1.1;
       margin-bottom: 12px;
-      font-weight: 800
+      font-weight: 800;
+      letter-spacing: -1.5px;
     }
 
     .hero h1 span {
@@ -305,10 +310,13 @@
 
     /* FORM */
     .fc {
-      background: #fff;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
       border-radius: 20px;
       padding: 30px 26px;
-      box-shadow: 0 28px 70px rgba(0, 0, 0, .28);
+      box-shadow: 0 40px 80px rgba(0, 0, 0, 0.2);
       color: var(--d)
     }
 
@@ -454,11 +462,12 @@
     }
 
     .st-wrap h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 36px;
+      font-family: var(--ff-h);
+      font-size: 38px;
       font-weight: 800;
       color: var(--d);
-      line-height: 1.2
+      line-height: 1.1;
+      letter-spacing: -1px;
     }
 
     .st-wrap p {
@@ -492,8 +501,8 @@
       background-size: 140px;
       border-radius: 16px;
       padding: 26px;
-      box-shadow: 0 4px 18px rgba(26, 60, 143, .07);
-      transition: .3s;
+      box-shadow: 0 8px 30px rgba(26, 60, 143, .05);
+      transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
       border: 1.5px solid transparent;
       text-decoration: none;
       color: inherit;
@@ -537,9 +546,9 @@
     }
 
     .cc:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 18px 45px rgba(26, 60, 143, .15);
-      border-color: var(--p)
+      transform: translateY(-10px);
+      box-shadow: 0 25px 60px rgba(15, 81, 50, .12);
+      border-color: rgba(15, 81, 50, 0.2);
     }
 
     .ci {
@@ -1206,10 +1215,36 @@
     }
 
     .l-m-c h2 {
-      font-family: 'Playfair Display', serif;
+      font-family: var(--ff-h);
       color: var(--p);
       margin-bottom: 20px;
       font-size: 28px;
+      letter-spacing: -0.5px;
+    }
+
+    /* REVEAL ANIMATIONS */
+    .rv {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .rv.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .rv-l {
+      transform: translateX(-30px);
+    }
+
+    .rv-r {
+      transform: translateX(30px);
+    }
+
+    .rv-l.active,
+    .rv-r.active {
+      transform: translateX(0);
     }
 
     .l-m-c h3 {
@@ -1434,9 +1469,9 @@
   </section>
 
   <!-- COURSES -->
-  <section class="cs" id="courses">
+  <section class="cs rv" id="courses">
     <div class="con">
-      <div class="st-wrap">
+      <div class="st-wrap rv">
         <div class="sl">Our Programs</div>
         <h2>Our Featured Courses</h2>
         <p>Choose from a wide range of professional programs offered by India's top universities</p>
@@ -1501,8 +1536,8 @@
   </section>
 
   <!-- GALLERY -->
-  <section class="gs" id="gallery">
-    <div class="st-wrap">
+  <section class="gs rv" id="gallery">
+    <div class="st-wrap rv">
       <div class="sl">Campus Life</div>
       <h2>Our vibrant university network</h2>
       <p>Explore the state-of-the-art facilities and vibrant student life at our partner colleges</p>
@@ -1566,9 +1601,9 @@
   </section>
 
   <!-- ELIGIBILITY -->
-  <section class="es" id="eligibility">
+  <section class="es rv" id="eligibility">
     <div class="con">
-      <div class="st-wrap">
+      <div class="st-wrap rv">
         <div class="sl">Admission Requirements</div>
         <h2>Eligibility Criteria</h2>
         <p>Check the academic requirements for your desired program before applying</p>
@@ -1739,9 +1774,9 @@
   </section>
 
   <!-- WHY US -->
-  <section>
+  <section class="ws rv">
     <div class="con">
-      <div class="st-wrap">
+      <div class="st-wrap rv">
         <div class="sl">Why Us</div>
         <h2>Why Choose Admission Planet?</h2>
         <p>We make your admission process smooth and hassle-free</p>
@@ -1818,9 +1853,9 @@
   </section>
 
   <!-- TESTIMONIALS -->
-  <section class="ts">
+  <section class="ts rv" id="testimonials">
     <div class="con">
-      <div class="st-wrap">
+      <div class="st-wrap rv">
         <div class="sl">Student Stories</div>
         <h2>What Our Students Say</h2>
         <p>Hear from students whose dreams we helped achieve</p>
@@ -2087,6 +2122,17 @@
         document.body.style.overflow = '';
       }
     }
+
+    // Scroll Reveal implementation
+    const revealElems = document.querySelectorAll('.rv');
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1 });
+    revealElems.forEach(el => revealObs.observe(el));
   </script>
 
   <!-- PRIVACY MODAL -->
