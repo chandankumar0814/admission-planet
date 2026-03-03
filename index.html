@@ -1876,8 +1876,6 @@
     const navLinksList = document.querySelectorAll('.nl a');
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', function (e) {
-        const h = this.getAttribute('href');
-        if (h === '#') return;
 
         // Update active class if it's a nav link
         if (this.closest('.nl')) {
@@ -1886,6 +1884,9 @@
           // Close mobile menu if open
           document.getElementById('navLinks').classList.remove('op');
         }
+
+        const h = this.getAttribute('href');
+        if (h === '#') return;
 
         const t = document.querySelector(h);
         if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }) }
