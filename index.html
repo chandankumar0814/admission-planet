@@ -1,0 +1,1893 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admission Planet | Top University Admissions in India</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --p: #0F5132;
+      --pd: #0a3622;
+      --a: #f5a623;
+      --a2: #e63946;
+      --l: #f0f9f4;
+      --w: #fff;
+      --g: #6b7280;
+      --d: #1a1a2e;
+      --gr: linear-gradient(135deg, #0F5132 0%, #0a3622 60%, #0F5132 100%)
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--d);
+      overflow-x: hidden
+    }
+
+    /* TICKER */
+    .tk {
+      background: var(--a2);
+      color: #fff;
+      padding: 9px 0;
+      overflow: hidden;
+      white-space: nowrap
+    }
+
+    .tk-t {
+      display: inline-block;
+      animation: tk 32s linear infinite
+    }
+
+    .tk-t span {
+      margin-right: 60px;
+      font-size: 13px;
+      font-weight: 500
+    }
+
+    @keyframes tk {
+      from {
+        transform: translateX(100vw)
+      }
+
+      to {
+        transform: translateX(-100%)
+      }
+    }
+
+    /* NAV */
+    nav {
+      background: #fff;
+      box-shadow: 0 2px 20px rgba(26, 60, 143, .12);
+      position: sticky;
+      top: 0;
+      z-index: 1000
+    }
+
+    .ni {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 24px
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none
+    }
+
+    .li {
+      width: 46px;
+      height: 46px;
+      background: var(--gr);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px
+    }
+
+    .lt {
+      font-family: 'Playfair Display', serif;
+      font-size: 21px;
+      font-weight: 800;
+      color: var(--p);
+      line-height: 1.1
+    }
+
+    .lt small {
+      display: block;
+      font-family: 'Poppins', sans-serif;
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--g);
+      letter-spacing: 1px;
+      text-transform: uppercase
+    }
+
+    .nl {
+      display: flex;
+      list-style: none;
+      gap: 4px
+    }
+
+    .nl a {
+      text-decoration: none;
+      color: var(--d);
+      font-size: 14px;
+      font-weight: 500;
+      padding: 8px 15px;
+      border-radius: 8px;
+      transition: .2s
+    }
+
+    .nl a:hover,
+    .nl a.ac {
+      background: var(--p);
+      color: #fff
+    }
+
+    .hb {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: var(--d)
+    }
+
+    /* HERO */
+    .hero {
+      background: var(--gr);
+      color: #fff;
+      padding: 75px 24px 90px;
+      position: relative;
+      overflow: hidden
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 420px;
+      height: 420px;
+      background: rgba(255, 255, 255, .04);
+      border-radius: 50%
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -120px;
+      left: -80px;
+      width: 350px;
+      height: 350px;
+      background: rgba(245, 166, 35, .1);
+      border-radius: 50%
+    }
+
+    .hi {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+      position: relative;
+      z-index: 2
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(245, 166, 35, .2);
+      border: 1px solid rgba(245, 166, 35, .5);
+      color: var(--a);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 16px
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 50px;
+      line-height: 1.15;
+      margin-bottom: 12px;
+      font-weight: 800
+    }
+
+    .hero h1 span {
+      color: var(--a)
+    }
+
+    .tl {
+      font-size: 17px;
+      font-style: italic;
+      opacity: .85;
+      margin-bottom: 18px;
+      font-weight: 300
+    }
+
+    .hero>div>p {
+      font-size: 15px;
+      opacity: .8;
+      line-height: 1.7;
+      margin-bottom: 30px
+    }
+
+    .hbs {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap
+    }
+
+    .bp {
+      background: var(--a);
+      color: var(--d);
+      padding: 13px 26px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 15px;
+      text-decoration: none;
+      transition: .2s;
+      display: inline-block;
+      border: none;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif
+    }
+
+    .bp:hover {
+      background: #e09411;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(245, 166, 35, .4)
+    }
+
+    .bo {
+      border: 2px solid rgba(255, 255, 255, .5);
+      color: #fff;
+      padding: 11px 26px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 15px;
+      text-decoration: none;
+      transition: .2s;
+      display: inline-block
+    }
+
+    .bo:hover {
+      border-color: #fff;
+      background: rgba(255, 255, 255, .1)
+    }
+
+    .sr {
+      display: flex;
+      gap: 28px;
+      margin-top: 36px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(255, 255, 255, .2)
+    }
+
+    .st h3 {
+      font-size: 30px;
+      font-weight: 800;
+      color: var(--a);
+      line-height: 1
+    }
+
+    .st p {
+      font-size: 12px;
+      opacity: .75;
+      margin-top: 4px
+    }
+
+    /* FORM */
+    .fc {
+      background: #fff;
+      border-radius: 20px;
+      padding: 30px 26px;
+      box-shadow: 0 28px 70px rgba(0, 0, 0, .28);
+      color: var(--d)
+    }
+
+    .fc h2 {
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--p);
+      margin-bottom: 5px
+    }
+
+    .fc>p {
+      font-size: 12px;
+      color: var(--g);
+      margin-bottom: 18px
+    }
+
+    .fg {
+      margin-bottom: 13px
+    }
+
+    .fg label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--g);
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      margin-bottom: 5px
+    }
+
+    .fg input,
+    .fg select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1.5px solid #e5e7eb;
+      border-radius: 8px;
+      font-size: 13px;
+      font-family: 'Poppins', sans-serif;
+      color: var(--d);
+      outline: none;
+      transition: border .2s
+    }
+
+    .fg input:focus,
+    .fg select:focus {
+      border-color: var(--p)
+    }
+
+    .fr {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px
+    }
+
+    .bw {
+      width: 100%;
+      background: #25D366;
+      color: #fff;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 9px;
+      transition: .2s
+    }
+
+    .bw:hover {
+      background: #1db954
+    }
+
+    .od {
+      text-align: center;
+      color: var(--g);
+      font-size: 12px;
+      margin: 9px 0;
+      position: relative
+    }
+
+    .od::before,
+    .od::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 43%;
+      height: 1px;
+      background: #e5e7eb
+    }
+
+    .od::before {
+      left: 0
+    }
+
+    .od::after {
+      right: 0
+    }
+
+    .be {
+      width: 100%;
+      background: var(--p);
+      color: #fff;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+      transition: .2s
+    }
+
+    .be:hover {
+      background: var(--pd)
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 76px 24px
+    }
+
+    .st-wrap {
+      text-align: center;
+      margin-bottom: 44px
+    }
+
+    .sl {
+      display: inline-block;
+      background: var(--l);
+      color: var(--p);
+      padding: 5px 16px;
+      border-radius: 50px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px
+    }
+
+    .st-wrap h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--d);
+      line-height: 1.2
+    }
+
+    .st-wrap p {
+      font-size: 14px;
+      color: var(--g);
+      max-width: 480px;
+      margin: 10px auto 0;
+      line-height: 1.7
+    }
+
+    .con {
+      max-width: 1200px;
+      margin: 0 auto
+    }
+
+    /* COURSES */
+    .cs {
+      background: var(--l)
+    }
+
+    .cg {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px
+    }
+
+    .cc {
+      background: #fff;
+      border-radius: 16px;
+      padding: 26px;
+      box-shadow: 0 4px 18px rgba(26, 60, 143, .07);
+      transition: .3s;
+      border: 1.5px solid transparent;
+      text-decoration: none;
+      color: inherit;
+      display: block
+    }
+
+    .cc:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 45px rgba(26, 60, 143, .15);
+      border-color: var(--p)
+    }
+
+    .ci {
+      width: 52px;
+      height: 52px;
+      border-radius: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 16px
+    }
+
+    .cc h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--d);
+      margin-bottom: 7px
+    }
+
+    .cc p {
+      font-size: 13px;
+      color: var(--g);
+      line-height: 1.6;
+      margin-bottom: 14px
+    }
+
+    .cl {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--p)
+    }
+
+    /* WHY */
+    .wg {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px
+    }
+
+    .wc {
+      text-align: center;
+      padding: 32px 22px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, .06);
+      transition: .3s
+    }
+
+    .wc:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 45px rgba(26, 60, 143, .14)
+    }
+
+    .wi {
+      width: 66px;
+      height: 66px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin: 0 auto 18px
+    }
+
+    .wc h3 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 9px;
+      color: var(--d)
+    }
+
+    .wc p {
+      font-size: 13px;
+      color: var(--g);
+      line-height: 1.6
+    }
+
+    /* UNIS */
+    .us {
+      background: var(--p);
+      color: #fff;
+      padding: 66px 24px
+    }
+
+    .us .st-wrap h2 {
+      color: #fff
+    }
+
+    .us .sl {
+      background: rgba(255, 255, 255, .15);
+      color: #fff
+    }
+
+    .us .st-wrap p {
+      color: rgba(255, 255, 255, .75)
+    }
+
+    .uscr {
+      overflow: hidden;
+      margin-top: 36px
+    }
+
+    .utr {
+      display: flex;
+      gap: 14px;
+      animation: sc 26s linear infinite;
+      width: max-content
+    }
+
+    .utr:hover {
+      animation-play-state: paused
+    }
+
+    @keyframes sc {
+      from {
+        transform: translateX(0)
+      }
+
+      to {
+        transform: translateX(-50%)
+      }
+    }
+
+    .uc {
+      background: rgba(255, 255, 255, .12);
+      border: 1px solid rgba(255, 255, 255, .2);
+      color: #fff;
+      padding: 11px 20px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 600;
+      white-space: nowrap;
+      transition: .2s;
+      cursor: default
+    }
+
+    .uc:hover {
+      background: rgba(255, 255, 255, .25)
+    }
+
+    /* TESTIMONIALS */
+    .ts {
+      background: var(--l)
+    }
+
+    .tg {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px
+    }
+
+    .tc {
+      background: #fff;
+      border-radius: 16px;
+      padding: 26px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, .06);
+      transition: .3s
+    }
+
+    .tc:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 38px rgba(26, 60, 143, .12)
+    }
+
+    .qm {
+      font-size: 56px;
+      color: var(--p);
+      opacity: .12;
+      line-height: .8;
+      font-family: Georgia, serif;
+      margin-bottom: 10px
+    }
+
+    .tc>p {
+      font-size: 13px;
+      color: #444;
+      line-height: 1.7;
+      margin-bottom: 18px;
+      font-style: italic
+    }
+
+    .ta {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      border-top: 1px solid #f0f0f0;
+      padding-top: 14px
+    }
+
+    .av {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--gr);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px;
+      flex-shrink: 0
+    }
+
+    .ai h4 {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--d)
+    }
+
+    .ai span {
+      font-size: 12px;
+      color: var(--g)
+    }
+
+    .stars {
+      color: var(--a);
+      font-size: 13px;
+      margin-bottom: 8px
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--d);
+      color: #fff;
+      padding: 56px 24px 22px
+    }
+
+    .fg2 {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 44px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid rgba(255, 255, 255, .1)
+    }
+
+    .fb p {
+      font-size: 13px;
+      color: rgba(255, 255, 255, .6);
+      line-height: 1.7;
+      margin-top: 13px;
+      max-width: 270px
+    }
+
+    .fc2 h4 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: .5px
+    }
+
+    .fc2 ul {
+      list-style: none
+    }
+
+    .fc2 ul li {
+      margin-bottom: 9px
+    }
+
+    .fc2 ul li a {
+      text-decoration: none;
+      color: rgba(255, 255, 255, .6);
+      font-size: 13px;
+      transition: .2s
+    }
+
+    .fc2 ul li a:hover {
+      color: var(--a)
+    }
+
+    .ci2 {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      margin-bottom: 13px;
+      color: rgba(255, 255, 255, .7);
+      font-size: 13px;
+      line-height: 1.5
+    }
+
+    .ci2 span:first-child {
+      font-size: 15px;
+      flex-shrink: 0;
+      margin-top: 1px
+    }
+
+    .fb2 {
+      max-width: 1200px;
+      margin: 20px auto 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      color: rgba(255, 255, 255, .4)
+    }
+
+    /* WA FLOAT */
+    .wa {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      background: #25D366;
+      color: #fff;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 22px rgba(37, 211, 102, .5);
+      text-decoration: none;
+      z-index: 999;
+      transition: .3s;
+      animation: pu 2s infinite
+    }
+
+    .wa:hover {
+      transform: scale(1.1)
+    }
+
+    @keyframes pu {
+      0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, .6)
+      }
+
+      70% {
+        box-shadow: 0 0 0 13px rgba(37, 211, 102, 0)
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0)
+      }
+    }
+
+    /* POPUP */
+    .po {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, .6);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(4px);
+      animation: fi .3s ease
+    }
+
+    @keyframes fi {
+      from {
+        opacity: 0
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    .pb {
+      background: #fff;
+      border-radius: 20px;
+      padding: 44px 36px;
+      max-width: 450px;
+      width: 90%;
+      text-align: center;
+      position: relative;
+      animation: su .3s ease
+    }
+
+    @keyframes su {
+      from {
+        transform: translateY(28px);
+        opacity: 0
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1
+      }
+    }
+
+    .pe {
+      font-size: 50px;
+      margin-bottom: 14px
+    }
+
+    .pb h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      color: var(--p);
+      margin-bottom: 10px
+    }
+
+    .pb>p {
+      font-size: 13px;
+      color: var(--g);
+      line-height: 1.6;
+      margin-bottom: 24px
+    }
+
+    .pbs {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap
+    }
+
+    .pc {
+      position: absolute;
+      top: 14px;
+      right: 18px;
+      font-size: 21px;
+      cursor: pointer;
+      color: var(--g);
+      background: none;
+      border: none
+    }
+
+    .pc:hover {
+      color: var(--d)
+    }
+
+    /* GALLERY */
+    .gs {
+      background: var(--l)
+    }
+
+    .gg {
+      column-count: 3;
+      column-gap: 22px;
+      padding: 0 24px;
+      max-width: 1200px;
+      margin: 0 auto
+    }
+
+    .gi {
+      break-inside: avoid;
+      margin-bottom: 22px;
+      border-radius: 18px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .08)
+    }
+
+    .gi img {
+      width: 100%;
+      display: block;
+      transition: transform .5s ease
+    }
+
+    .gi:hover img {
+      transform: scale(1.08)
+    }
+
+    .gi-o {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(15, 36, 96, .85) 0%, rgba(15, 36, 96, 0) 60%);
+      opacity: 0;
+      transition: .4s ease;
+      display: flex;
+      align-items: flex-end;
+      padding: 24px
+    }
+
+    .gi:hover .gi-o {
+      opacity: 1
+    }
+
+    .gi-t h3 {
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 4px;
+      transform: translateY(15px);
+      transition: .4s ease
+    }
+
+    .gi-t p {
+      color: rgba(255, 255, 255, .8);
+      font-size: 13px;
+      transform: translateY(15px);
+      transition: .4s ease;
+      transition-delay: .05s
+    }
+
+    .gi:hover .gi-t h3,
+    .gi:hover .gi-t p {
+      transform: translateY(0)
+    }
+
+    @media(max-width:900px) {
+      .gg {
+        column-count: 2
+      }
+    }
+
+    @media(max-width:600px) {
+      .gg {
+        column-count: 1
+      }
+    }
+
+    /* ELIGIBILITY TABS */
+    .es {
+      background: #fff
+    }
+
+    .et-c {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 38px
+    }
+
+    .et-b {
+      background: var(--l);
+      color: var(--g);
+      border: none;
+      padding: 11px 24px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      transition: .3s;
+      font-family: 'Poppins', sans-serif
+    }
+
+    .et-b:hover,
+    .et-b.ac {
+      background: var(--p);
+      color: #fff;
+      box-shadow: 0 6px 18px rgba(26, 60, 143, .15)
+    }
+
+    .ec-p {
+      display: none;
+      animation: fi .4s ease
+    }
+
+    .ec-p.ac {
+      display: block
+    }
+
+    .ec-g {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px
+    }
+
+    .ec-c {
+      background: #fff;
+      border: 1px solid #edf2f7;
+      border-radius: 16px;
+      padding: 26px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, .03);
+      transition: .3s
+    }
+
+    .ec-c:hover {
+      border-color: var(--p);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(26, 60, 143, .08)
+    }
+
+    .ec-c h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--d);
+      margin-bottom: 14px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #edf2f7
+    }
+
+    .ec-c ul {
+      list-style: none
+    }
+
+    .ec-c ul li {
+      position: relative;
+      padding-left: 22px;
+      font-size: 13px;
+      color: var(--g);
+      margin-bottom: 10px;
+      line-height: 1.6
+    }
+
+    .ec-c ul li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--a);
+      font-weight: 800;
+      font-size: 13px
+    }
+
+    @media(max-width:900px) {
+      .ec-g {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    @media(max-width:600px) {
+      .ec-g {
+        grid-template-columns: 1fr
+      }
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:900px) {
+      .hi {
+        grid-template-columns: 1fr;
+        gap: 36px
+      }
+
+      .hero h1 {
+        font-size: 36px
+      }
+
+      .cg {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .wg {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .tg {
+        grid-template-columns: 1fr
+      }
+
+      .fg2 {
+        grid-template-columns: 1fr 1fr;
+        gap: 28px
+      }
+
+      .nl {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: #fff;
+        flex-direction: column;
+        padding: 18px;
+        box-shadow: 0 10px 28px rgba(0, 0, 0, .1)
+      }
+
+      .nl.op {
+        display: flex
+      }
+
+      .hb {
+        display: block
+      }
+
+      .sr {
+        flex-wrap: wrap;
+        gap: 18px
+      }
+
+      .fr {
+        grid-template-columns: 1fr
+      }
+    }
+
+    @media(max-width:600px) {
+
+      .cg,
+      .wg {
+        grid-template-columns: 1fr
+      }
+
+      .fg2 {
+        grid-template-columns: 1fr
+      }
+
+      .hero {
+        padding: 48px 18px 56px
+      }
+
+      .st-wrap h2 {
+        font-size: 28px
+      }
+
+      .fb2 {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- TICKER -->
+  <div class="tk">
+    <div class="tk-t">
+      <span>🚀 Admission Open for 2025-26 Batch! Limited Seats Available</span>
+      <span>🎓 Get up to 50% Scholarship on selected courses</span>
+      <span>📞 Call Now: +91 8936006657 for Free Counseling</span>
+      <span>🏆 Partnered with 25+ Top Universities in India</span>
+      <span>🚀 Admission Open for 2025-26 Batch! Limited Seats Available</span>
+      <span>🎓 Get up to 50% Scholarship on selected courses</span>
+      <span>📞 Call Now: +91 8936006657 for Free Counseling</span>
+      <span>🏆 Partnered with 25+ Top Universities in India</span>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="ni">
+      <a href="#" class="logo">
+        <img src="assets/images/logo.png" alt="Admission Planet Logo" style="height: 46px;">
+        <div class="lt" style="font-size: 24px;">ADMISSION PLANET</div>
+      </a>
+      <ul class="nl" id="navLinks">
+        <li><a href="#" class="ac">Home</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#eligibility">Eligibility</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="hb" onclick="document.getElementById('navLinks').classList.toggle('op')">☰</button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hi">
+      <div>
+        <div class="badge">✨ India's Trusted Admission Partner</div>
+        <h1>ADMISSION<br><span>PLANET</span></h1>
+        <p class="tl">" Now Dreams Will Come True "</p>
+        <p>Expert guidance for Undergraduate, Postgraduate, Teacher Training, Pharmacy, Nursing, Management, Law, &amp;
+          Paramedical courses. We connect you with India's top universities at affordable fees.</p>
+        <div class="hbs">
+          <a href="#enquiry" class="bp">Free Consultation</a>
+          <a href="#courses" class="bo">Explore Courses →</a>
+        </div>
+        <div class="sr">
+          <div class="st">
+            <h3 id="s1">0+</h3>
+            <p>Partner Universities</p>
+          </div>
+          <div class="st">
+            <h3 id="s2">0+</h3>
+            <p>Diverse Courses</p>
+          </div>
+          <div class="st">
+            <h3 id="s3">0+</h3>
+            <p>Successful Admissions</p>
+          </div>
+        </div>
+      </div>
+      <!-- FORM -->
+      <div class="fc" id="enquiry">
+        <h2>Admission Enquiry Form</h2>
+        <p>Fill this form to get free counseling from our experts</p>
+        <div class="fr">
+          <div class="fg"><label>Full Name *</label><input type="text" placeholder="Your name"></div>
+          <div class="fg"><label>Phone *</label><input type="tel" placeholder="+91 XXXXX XXXXX"></div>
+        </div>
+        <div class="fg"><label>Email Address</label><input type="email" placeholder="your@email.com"></div>
+        <div class="fg">
+          <label>Select Course *</label>
+          <select>
+            <option value="">-- Select Course --</option>
+            <option>Pharmacy (B.Pharm/D.Pharm/M.Pharm)</option>
+            <option>Nursing (ANM/GNM/B.Sc/M.Sc)</option>
+            <option>Management (BBA/MBA/PGDM)</option>
+            <option>Law (LLB/BA LLB/LLM)</option>
+            <option>Teacher Training</option>
+            <option>Paramedical Courses</option>
+            <option>B.Tech Engineering</option>
+            <option>B.Sc Science</option>
+            <option>B.A Arts</option>
+            <option>B.Com Commerce</option>
+            <option>Diploma Courses</option>
+            <option>Ph.D Programs</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label>Current Qualification *</label>
+          <select>
+            <option value="">-- Select --</option>
+            <option>10th Pass</option>
+            <option>12th Pass</option>
+            <option>Graduate</option>
+            <option>Post Graduate</option>
+            <option>Diploma Holder</option>
+          </select>
+        </div>
+        <button class="bw">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="white">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
+            <path
+              d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.858L0 24l6.335-1.524A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.82 0-3.53-.49-5.003-1.346l-.36-.213-3.76.905.944-3.663-.234-.376A9.952 9.952 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+          </svg>
+          Submit via WhatsApp
+        </button>
+        <div class="od">OR</div>
+        <button class="be">Submit via Email</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- COURSES -->
+  <section class="cs" id="courses">
+    <div class="con">
+      <div class="st-wrap">
+        <div class="sl">Our Programs</div>
+        <h2>Our Featured Courses</h2>
+        <p>Choose from a wide range of professional programs offered by India's top universities</p>
+      </div>
+      <div class="cg">
+        <a href="#" class="cc">
+          <div class="ci" style="background:#e8f5e9">🏥</div>
+          <h3>Nursing</h3>
+          <p>ANM, GNM, B.Sc Nursing, M.Sc Nursing programs</p>
+          <div class="cl">Learn More →</div>
+        </a>
+        <a href="#" class="cc">
+          <div class="ci" style="background:#fff3e0">💊</div>
+          <h3>Pharmacy</h3>
+          <p>D.Pharm, B.Pharm, M.Pharm, Pharm.D programs</p>
+          <div class="cl">Learn More →</div>
+        </a>
+        <a href="#" class="cc">
+          <div class="ci" style="background:#e3f2fd">📊</div>
+          <h3>Management</h3>
+          <p>BBA, MBA, PGDM, Executive MBA programs</p>
+          <div class="cl">Learn More →</div>
+        </a>
+        <a href="#" class="cc">
+          <div class="ci" style="background:#fce4ec">🔧</div>
+          <h3>Polytechnic</h3>
+          <p>Diploma in Mechanical, Civil, Electrical, Computer Engineering</p>
+          <div class="cl">Learn More →</div>
+        </a>
+        <a href="#" class="cc">
+          <div class="ci" style="background:#f3e5f5">⚙️</div>
+          <h3>Engineering</h3>
+          <p>B.Tech in CSE, ME, ECE, Civil with M.Tech options</p>
+          <div class="cl">Learn More →</div>
+        </a>
+        <a href="#" class="cc">
+          <div class="ci" style="background:#e0f7fa">🩺</div>
+          <h3>Paramedical</h3>
+          <p>BMLT, Radiology, Optometry, OT Technology programs</p>
+          <div class="cl">Learn More →</div>
+        </a>
+        <a href="#" class="cc">
+          <div class="ci" style="background:#fff8e1">🎓</div>
+          <h3>Teacher Training</h3>
+          <p>B.Ed, M.Ed, D.El.Ed, NTT, B.P.Ed programs</p>
+          <div class="cl">Learn More →</div>
+        </a>
+        <a href="#" class="cc">
+          <div class="ci" style="background:#fbe9e7">⚖️</div>
+          <h3>Law</h3>
+          <p>BA LLB, LLB, LLM, BBA LLB programs</p>
+          <div class="cl">Learn More →</div>
+        </a>
+        <a href="#" class="cc">
+          <div class="ci" style="background:#e8eaf6">🔬</div>
+          <h3>Science &amp; Arts</h3>
+          <p>B.Sc, B.A, B.Com, M.Sc, M.A programs</p>
+          <div class="cl">Learn More →</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gs" id="gallery">
+    <div class="st-wrap">
+      <div class="sl">Campus Life</div>
+      <h2>Our vibrant university network</h2>
+      <p>Explore the state-of-the-art facilities and vibrant student life at our partner colleges</p>
+    </div>
+    <div class="gg">
+      <div class="gi">
+        <img src="assets/images/college_campus_1772563253847.png" alt="University Campus">
+        <div class="gi-o">
+          <div class="gi-t">
+            <h3>Premium Infrastructure</h3>
+            <p>Beautiful, green university campuses</p>
+          </div>
+        </div>
+      </div>
+      <div class="gi">
+        <img src="assets/images/mba_students_1772563274269.png" alt="MBA Students">
+        <div class="gi-o">
+          <div class="gi-t">
+            <h3>MBA Programs</h3>
+            <p>Modern corporate boardrooms</p>
+          </div>
+        </div>
+      </div>
+      <div class="gi">
+        <img src="assets/images/engineering_lab_1772563318153.png" alt="Engineering Lab">
+        <div class="gi-o">
+          <div class="gi-t">
+            <h3>Engineering Labs</h3>
+            <p>High-tech robotics and electronics</p>
+          </div>
+        </div>
+      </div>
+      <div class="gi">
+        <img src="assets/images/nursing_students_1772563342399.png" alt="Nursing Students">
+        <div class="gi-o">
+          <div class="gi-t">
+            <h3>Healthcare Training</h3>
+            <p>Advanced medical simulation labs</p>
+          </div>
+        </div>
+      </div>
+      <div class="gi">
+        <img src="assets/images/graduation_ceremony_1772563365161.png" alt="Graduation Ceremony">
+        <div class="gi-o">
+          <div class="gi-t">
+            <h3>Successful Placements</h3>
+            <p>Join our thriving alumni network</p>
+          </div>
+        </div>
+      </div>
+      <div class="gi">
+        <img src="assets/images/library_study_1772563381609.png" alt="University Library">
+        <div class="gi-o">
+          <div class="gi-t">
+            <h3>World-Class Libraries</h3>
+            <p>Aesthetic and modern study spaces</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ELIGIBILITY -->
+  <section class="es" id="eligibility">
+    <div class="con">
+      <div class="st-wrap">
+        <div class="sl">Admission Requirements</div>
+        <h2>Eligibility Criteria</h2>
+        <p>Check the academic requirements for your desired program before applying</p>
+      </div>
+
+      <div class="et-c">
+        <button class="et-b ac" onclick="openTab(event, 'tab-ug')">Undergraduate</button>
+        <button class="et-b" onclick="openTab(event, 'tab-pg')">Graduate</button>
+        <button class="et-b" onclick="openTab(event, 'tab-dip')">Diploma &amp; Cert.</button>
+        <button class="et-b" onclick="openTab(event, 'tab-doc')">Doctoral</button>
+      </div>
+
+      <div class="ec-p ac" id="tab-ug">
+        <div class="ec-g">
+          <div class="ec-c">
+            <h3>B.A. (Bachelor of Arts)</h3>
+            <ul>
+              <li>Completion of high school (10+2) from recognized board</li>
+              <li>Minimum 50% aggregate marks (varies by university)</li>
+              <li>Some universities may require entrance exams</li>
+            </ul>
+          </div>
+          <div class="ec-c">
+            <h3>B.Sc. (Bachelor of Science)</h3>
+            <ul>
+              <li>10+2 with Science stream (Physics, Chemistry, Biology/Mathematics)</li>
+              <li>Minimum 50-60% aggregate marks (subject to university norms)</li>
+              <li>Some courses may have specific subject requirements</li>
+            </ul>
+          </div>
+          <div class="ec-c">
+            <h3>B.Com (Bachelor of Commerce)</h3>
+            <ul>
+              <li>10+2 with Commerce stream preferred</li>
+              <li>Minimum 45-50% aggregate marks</li>
+              <li>Mathematics as a subject may be required for some universities</li>
+            </ul>
+          </div>
+          <div class="ec-c">
+            <h3>B.Tech (Bachelor of Technology)</h3>
+            <ul>
+              <li>10+2 with Physics, Chemistry and Mathematics</li>
+              <li>Minimum 60-75% aggregate marks (varies by college)</li>
+              <li>Valid score in JEE Main/State Engineering Entrance Exams</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="ec-p" id="tab-pg">
+        <div class="ec-g">
+          <div class="ec-c">
+            <h3>M.A. (Master of Arts)</h3>
+            <ul>
+              <li>Bachelor's degree (B.A. or equivalent) in relevant discipline</li>
+              <li>Minimum 50-55% aggregate marks</li>
+              <li>Some universities conduct entrance exams</li>
+            </ul>
+          </div>
+          <div class="ec-c">
+            <h3>M.Sc. (Master of Science)</h3>
+            <ul>
+              <li>B.Sc. in relevant science field</li>
+              <li>Minimum 55-60% aggregate marks</li>
+              <li>Entrance exams for some universities and specializations</li>
+            </ul>
+          </div>
+          <div class="ec-c">
+            <h3>M.Com (Master of Commerce)</h3>
+            <ul>
+              <li>B.Com or equivalent degree</li>
+              <li>Minimum 50% aggregate marks</li>
+              <li>Some universities prefer entrance exam scores</li>
+            </ul>
+          </div>
+          <div class="ec-c">
+            <h3>MBA (Master of Business Administration)</h3>
+            <ul>
+              <li>Bachelor's degree in any discipline</li>
+              <li>Minimum 50% aggregate marks</li>
+              <li>Valid score in CAT/MAT/XAT/CMAT or university entrance tests</li>
+              <li>Work experience preferred but not mandatory</li>
+            </ul>
+          </div>
+          <div class="ec-c">
+            <h3>M.Tech (Master of Technology)</h3>
+            <ul>
+              <li>B.Tech/B.E. in relevant engineering discipline</li>
+              <li>Minimum 60% aggregate marks</li>
+              <li>Valid GATE score or university entrance exam</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="ec-p" id="tab-dip">
+        <div class="ec-g">
+          <div class="ec-c">
+            <h3>ANM (Auxiliary Nursing Midwifery)</h3>
+            <ul>
+              <li>10+2 with Science subjects preferred</li>
+              <li>Minimum 45-50% aggregate marks</li>
+              <li>Age limit: 17-35 years</li>
+              <li>Some states conduct entrance exams</li>
+            </ul>
+          </div>
+          <div class="ec-c">
+            <h3>GNM (General Nursing Midwifery)</h3>
+            <ul>
+              <li>10+2 with Science (Physics, Chemistry, Biology)</li>
+              <li>Minimum 50% aggregate marks</li>
+              <li>Age limit: 17-35 years</li>
+              <li>State nursing council entrance exams may apply</li>
+            </ul>
+          </div>
+          <div class="ec-c">
+            <h3>Polytechnic Diploma</h3>
+            <ul>
+              <li>10th pass for 3-year diploma</li>
+              <li>10+2 with Science for lateral entry to 2nd year</li>
+              <li>Minimum 35-50% marks depending on state</li>
+              <li>State-level entrance exams in most cases</li>
+            </ul>
+          </div>
+          <div class="ec-c">
+            <h3>BLIS (Bachelor of Library Science)</h3>
+            <ul>
+              <li>Bachelor's degree in any discipline</li>
+              <li>Minimum 45-50% aggregate marks</li>
+              <li>Some universities conduct entrance exams</li>
+            </ul>
+          </div>
+          <div class="ec-c">
+            <h3>B.Pharm (Bachelor of Pharmacy)</h3>
+            <ul>
+              <li>10+2 with Physics, Chemistry and Biology/Mathematics</li>
+              <li>Minimum 50% aggregate marks (60% for some universities)</li>
+              <li>Valid score in state/national pharmacy entrance exams</li>
+            </ul>
+          </div>
+          <div class="ec-c">
+            <h3>LLB/BA LLB (Law Programs)</h3>
+            <ul>
+              <li>For LLB: Bachelor's degree with 45-50% marks</li>
+              <li>For BA LLB: 10+2 with 45-50% marks</li>
+              <li>Valid score in CLAT/LSAT or university entrance tests</li>
+              <li>Age limit may apply for some programs</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="ec-p" id="tab-doc">
+        <div class="ec-g">
+          <div class="ec-c">
+            <h3>Ph.D. (Doctor of Philosophy)</h3>
+            <ul>
+              <li>Master's degree in relevant field with minimum 55% marks</li>
+              <li>Valid score in UGC-NET/JRF or university entrance exam</li>
+              <li>Research proposal submission</li>
+              <li>Interview with the research committee</li>
+              <li>Some universities may require prior research experience</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section>
+    <div class="con">
+      <div class="st-wrap">
+        <div class="sl">Why Us</div>
+        <h2>Why Choose Admission Planet?</h2>
+        <p>We make your admission process smooth and hassle-free</p>
+      </div>
+      <div class="wg">
+        <div class="wc">
+          <div class="wi" style="background:#fff3e0">💰</div>
+          <h3>Affordable Fees</h3>
+          <p>Direct admission with minimal consultancy fees and no hidden charges</p>
+        </div>
+        <div class="wc">
+          <div class="wi" style="background:#e3f2fd">🏛️</div>
+          <h3>Top Universities</h3>
+          <p>Tie-ups with 100+ UGC/AICTE/PCI/INC approved universities</p>
+        </div>
+        <div class="wc">
+          <div class="wi" style="background:#e8f5e9">✅</div>
+          <h3>100% Guidance</h3>
+          <p>End-to-end support from application to admission confirmation</p>
+        </div>
+        <div class="wc">
+          <div class="wi" style="background:#f3e5f5">📄</div>
+          <h3>Documentation</h3>
+          <p>Complete assistance in documentation and application process</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNER UNIS -->
+  <section class="us">
+    <div class="st-wrap">
+      <div class="sl">Our Network</div>
+      <h2>Our Partner Universities</h2>
+      <p>We are affiliated with India's most prestigious institutions</p>
+    </div>
+    <div class="uscr">
+      <div class="utr">
+        <div class="uc">🎓 Lovely Professional University</div>
+        <div class="uc">🎓 LNCT Bhopal</div>
+        <div class="uc">🎓 Amity University</div>
+        <div class="uc">🎓 Manipal University</div>
+        <div class="uc">🎓 Flame University</div>
+        <div class="uc">🎓 MIT Pune</div>
+        <div class="uc">🎓 Arka Jain University</div>
+        <div class="uc">🎓 YBN University</div>
+        <div class="uc">🎓 CV Raman University</div>
+        <div class="uc">🎓 Uttranchal University</div>
+        <div class="uc">🎓 Himalayan University</div>
+        <div class="uc">🎓 Kalinga University</div>
+        <div class="uc">🎓 OP Jindal University</div>
+        <div class="uc">🎓 GD Goenka University</div>
+        <div class="uc">🎓 DY Patil University</div>
+        <div class="uc">🎓 Jaypee University</div>
+        <!-- duplicate for seamless loop -->
+        <div class="uc">🎓 Lovely Professional University</div>
+        <div class="uc">🎓 LNCT Bhopal</div>
+        <div class="uc">🎓 Amity University</div>
+        <div class="uc">🎓 Manipal University</div>
+        <div class="uc">🎓 Flame University</div>
+        <div class="uc">🎓 MIT Pune</div>
+        <div class="uc">🎓 Arka Jain University</div>
+        <div class="uc">🎓 YBN University</div>
+        <div class="uc">🎓 CV Raman University</div>
+        <div class="uc">🎓 Uttranchal University</div>
+        <div class="uc">🎓 Himalayan University</div>
+        <div class="uc">🎓 Kalinga University</div>
+        <div class="uc">🎓 OP Jindal University</div>
+        <div class="uc">🎓 GD Goenka University</div>
+        <div class="uc">🎓 DY Patil University</div>
+        <div class="uc">🎓 Jaypee University</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="ts">
+    <div class="con">
+      <div class="st-wrap">
+        <div class="sl">Student Stories</div>
+        <h2>What Our Students Say</h2>
+        <p>Hear from students whose dreams we helped achieve</p>
+      </div>
+      <div class="tg">
+        <div class="tc">
+          <div class="qm">"</div>
+          <div class="stars">★★★★★</div>
+          <p>Admission Planet helped me get into my dream D.Pharm college with scholarship. Their guidance was
+            invaluable throughout the process.</p>
+          <div class="ta">
+            <div class="av">O</div>
+            <div class="ai">
+              <h4>Om Shankar</h4><span>D.Pharma, Bihar</span>
+            </div>
+          </div>
+        </div>
+        <div class="tc">
+          <div class="qm">"</div>
+          <div class="stars">★★★★★</div>
+          <p>Coming from Jharkhand, I was unsure about the process, but Admission Planet made my D.Pharma admission
+            seamless and stress-free.</p>
+          <div class="ta">
+            <div class="av">A</div>
+            <div class="ai">
+              <h4>Anjani Kumari</h4><span>D.Pharma, Jharkhand</span>
+            </div>
+          </div>
+        </div>
+        <div class="tc">
+          <div class="qm">"</div>
+          <div class="stars">★★★★★</div>
+          <p>The team helped me secure admission in D.Pharma despite tough competition. Truly professional and dedicated
+            services throughout.</p>
+          <div class="ta">
+            <div class="av">S</div>
+            <div class="ai">
+              <h4>Suman Raj</h4><span>D.Pharma, Bihar</span>
+            </div>
+          </div>
+        </div>
+        <div class="tc">
+          <div class="qm">"</div>
+          <div class="stars">★★★★★</div>
+          <p>My dream of becoming an ANM became reality thanks to Admission Planet's dedicated assistance and expert
+            counseling team.</p>
+          <div class="ta">
+            <div class="av">R</div>
+            <div class="ai">
+              <h4>Rajni Kumari</h4><span>ANM, Bihar</span>
+            </div>
+          </div>
+        </div>
+        <div class="tc">
+          <div class="qm">"</div>
+          <div class="stars">★★★★★</div>
+          <p>GNM admission was complicated, but Admission Planet handled everything perfectly. Now I'm on my way to
+            becoming a nurse!</p>
+          <div class="ta">
+            <div class="av">J</div>
+            <div class="ai">
+              <h4>Jitendra Kumar</h4><span>GNM, Bihar</span>
+            </div>
+          </div>
+        </div>
+        <div class="tc">
+          <div class="qm">"</div>
+          <div class="stars">★★★★★</div>
+          <p>Got into a premier MBA college with Admission Planet's strategic counseling. Their expertise truly saved me
+            time and money.</p>
+          <div class="ta">
+            <div class="av">N</div>
+            <div class="ai">
+              <h4>Nikhil Kumar</h4><span>MBA, Bihar</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contact">
+    <div class="fg2">
+      <div class="fb">
+        <a href="#" class="logo">
+          <img src="assets/images/logo.png" alt="Admission Planet Logo" style="height: 46px;">
+          <div class="lt" style="color:#fff; font-size: 24px;">Admission Planet</div>
+        </a>
+        <p>Your trusted partner for admissions in top universities across India. We provide end-to-end guidance for UG,
+          PG, Diploma and Professional courses.</p>
+      </div>
+      <div class="fc2">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">› Home</a></li>
+          <li><a href="#courses">› Courses</a></li>
+          <li><a href="#">› Eligibility Criteria</a></li>
+          <li><a href="#">› Contact Us</a></li>
+          <li><a href="#">› Privacy Policy</a></li>
+          <li><a href="#">› Terms &amp; Conditions</a></li>
+        </ul>
+      </div>
+      <div class="fc2">
+        <h4>Our Courses</h4>
+        <ul>
+          <li><a href="#">› Pharmacy Courses</a></li>
+          <li><a href="#">› Nursing Programs</a></li>
+          <li><a href="#">› Management Studies</a></li>
+          <li><a href="#">› Law Admissions</a></li>
+          <li><a href="#">› Paramedical Courses</a></li>
+          <li><a href="#">› Science &amp; Arts</a></li>
+        </ul>
+      </div>
+      <div class="fc2">
+        <h4>Contact Info</h4>
+        <div class="ci2"><span>📍</span><span>S.N college more, Tekari, Gaya, Bihar, India-804422</span></div>
+        <div class="ci2"><span>📞</span><span>+91 8936006657<br>+91 9798446477</span></div>
+        <div class="ci2"><span>✉️</span><span>info@admissionplanet.org<br>admissionplanet.offical@gmail.com</span></div>
+        <div class="ci2"><span>🕐</span><span>Mon-Sat: 10:00 AM - 7:00 PM</span></div>
+      </div>
+    </div>
+    <div class="fb2">
+      <span>© 2023 Admission Planet. All Rights Reserved.</span>
+      <span>Designed &amp; Developed by Admission Planet Team</span>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/918936006657" class="wa" target="_blank">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
+      <path
+        d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.858L0 24l6.335-1.524A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.82 0-3.53-.49-5.003-1.346l-.36-.213-3.76.905.944-3.663-.234-.376A9.952 9.952 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+    </svg>
+  </a>
+
+  <!-- POPUP -->
+  <div class="po" id="popup">
+    <div class="pb">
+      <button class="pc" onclick="document.getElementById('popup').style.display='none'">✕</button>
+      <div class="pe">🎓</div>
+      <h2>Welcome to Admission Planet!</h2>
+      <p>Unlock expert guidance for college admissions, scholarships, and career success.</p>
+      <div class="pbs">
+        <a href="#enquiry" class="bp" onclick="document.getElementById('popup').style.display='none'">Free
+          Consultation</a>
+        <a href="#courses"
+          style="border:2px solid var(--p);color:var(--p);padding:11px 22px;border-radius:10px;font-weight:600;text-decoration:none;font-size:14px"
+          onclick="document.getElementById('popup').style.display='none'">Explore Courses</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Popup
+    setTimeout(() => { document.getElementById('popup').style.display = 'flex' }, 1600);
+    document.getElementById('popup').addEventListener('click', function (e) { if (e.target === this) this.style.display = 'none' });
+
+    // Counter animation
+    function counter(id, target, sfx) {
+      let n = 0; const el = document.getElementById(id);
+      const t = setInterval(() => { n = Math.min(n + Math.ceil(target / 55), target); el.textContent = n + sfx; if (n >= target) clearInterval(t) }, 22);
+    }
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { counter('s1', 25, '+'); counter('s2', 50, '+'); counter('s3', 5000, '+'); obs.disconnect() } })
+    }, { threshold: 0.5 });
+    obs.observe(document.getElementById('s1'));
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', function (e) {
+        const h = this.getAttribute('href');
+        if (h === '#') return;
+        const t = document.querySelector(h);
+        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }) }
+      });
+    });
+
+    // Tab switching
+    function openTab(evt, tabId) {
+      var i, x, tablinks;
+      x = document.getElementsByClassName("ec-p");
+      for (i = 0; i < x.length; i++) {
+        x[i].classList.remove("ac");
+      }
+      tablinks = document.getElementsByClassName("et-b");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("ac");
+      }
+      document.getElementById(tabId).classList.add("ac");
+      evt.currentTarget.classList.add("ac");
+    }
+  </script>
+</body>
+
+</html>
