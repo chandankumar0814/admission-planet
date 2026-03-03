@@ -1,0 +1,93 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+background:#0f1a14;
+color:#fff;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:#0c1410;
+box-shadow:0 0 10px rgba(0,255,100,0.2);
+}
+
+nav .logo{
+font-size:22px;
+font-weight:bold;
+color:#00ff88;
+}
+
+nav ul{
+list-style:none;
+display:flex;
+gap:25px;
+}
+
+nav ul li a{
+text-decoration:none;
+color:white;
+transition:0.3s;
+}
+
+nav ul li a:hover{
+color:#00ff88;
+}
+
+.hero{
+text-align:center;
+padding:120px 20px;
+}
+
+.hero h1{
+font-size:50px;
+margin-bottom:20px;
+}
+
+.hero p{
+color:#ccc;
+margin-bottom:30px;
+}
+
+.btn{
+background:#00aa55;
+padding:12px 25px;
+border-radius:5px;
+text-decoration:none;
+color:white;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#00ff88;
+color:black;
+}
+
+.features{
+display:flex;
+justify-content:center;
+gap:30px;
+padding:60px 8%;
+flex-wrap:wrap;
+}
+
+.card{
+background:#16241c;
+padding:30px;
+border-radius:10px;
+width:250px;
+text-align:center;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 20px rgba(0,255,100,0.4);
+}
