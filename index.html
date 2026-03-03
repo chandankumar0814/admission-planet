@@ -5,6 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admission Planet | Top University Admissions in India</title>
+
+  <!-- PWA Settings for Android & iOS -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0F5132">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="AdmissionPlanet">
+  <link rel="apple-touch-icon" href="assets/images/logo.png">
+
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap"
     rel="stylesheet">
@@ -1886,6 +1895,19 @@
       }
       document.getElementById(tabId).classList.add("ac");
       evt.currentTarget.classList.add("ac");
+    }
+
+    // PWA Service Worker Registration
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(registration => {
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          })
+          .catch(error => {
+            console.log('ServiceWorker registration failed: ', error);
+          });
+      });
     }
   </script>
 </body>
