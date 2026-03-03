@@ -1,4 +1,4 @@
-const CACHE_NAME = 'admission-planet-v2';
+const CACHE_NAME = 'admission-planet-v3';
 const urlsToCache = [
   '/',
   '/index.html',
