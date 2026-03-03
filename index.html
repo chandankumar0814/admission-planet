@@ -1872,11 +1872,21 @@
     }, { threshold: 0.5 });
     obs.observe(document.getElementById('s1'));
 
-    // Smooth scroll
+    // Smooth scroll and active nav state
+    const navLinksList = document.querySelectorAll('.nl a');
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', function (e) {
         const h = this.getAttribute('href');
         if (h === '#') return;
+
+        // Update active class if it's a nav link
+        if (this.closest('.nl')) {
+          navLinksList.forEach(link => link.classList.remove('ac'));
+          this.classList.add('ac');
+          // Close mobile menu if open
+          document.getElementById('navLinks').classList.remove('op');
+        }
+
         const t = document.querySelector(h);
         if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }) }
       });
